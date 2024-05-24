@@ -9,8 +9,15 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+        /* Arrange folders horizontally */
+        .folders {
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping to the next line */
+            gap: 20px; /* Add space between folders */
+            overflow-x: auto; /* Allow horizontal scrolling if needed */
+        }
         .folder {
-            margin: 20px 0;
+            flex: 0 0 auto; /* Prevent folders from growing */
         }
         .folder label {
             display: block;
@@ -28,32 +35,35 @@
 <body>
     <h1>Upload Files to Folders</h1>
 
-    <div class="folder" id="Johnny">
-        <label for="file1">Johnny</label>
-        <input type="file" id="file1" multiple>
-        <button onclick="uploadFiles('Johnny', 'file1')">Upload to Johnny</button>
-        <a href="/Johnny">View files in Johnny</a>
-    </div>
+    <!-- Wrap all folders in a container with class "folders" -->
+    <div class="folders">
+        <div class="folder" id="Johnny">
+            <label for="file1">Johnny</label>
+            <input type="file" id="file1" multiple>
+            <button onclick="uploadFiles('Johnny', 'file1')">Upload to Johnny</button>
+            <a href="/Johnny">View files in Johnny</a>
+        </div>
 
-    <div class="folder" id="Joey">
-        <label for="file2">Joey</label>
-        <input type="file" id="file2" multiple>
-        <button onclick="uploadFiles('Joey', 'file2')">Upload to Joey</button>
-        <a href="/Joey">View files in Joey</a>
-    </div>
+        <div class="folder" id="Joey">
+            <label for="file2">Joey</label>
+            <input type="file" id="file2" multiple>
+            <button onclick="uploadFiles('Joey', 'file2')">Upload to Joey</button>
+            <a href="/Joey">View files in Joey</a>
+        </div>
 
-    <div class="folder" id="Gennie">
-        <label for="file3">Gennie</label>
-        <input type="file" id="file3" multiple>
-        <button onclick="uploadFiles('Gennie', 'file3')">Upload to Gennie</button>
-        <a href="/Gennie">View files in Gennie</a>
-    </div>
+        <div class="folder" id="Gennie">
+            <label for="file3">Gennie</label>
+            <input type="file" id="file3" multiple>
+            <button onclick="uploadFiles('Gennie', 'file3')">Upload to Gennie</button>
+            <a href="/Gennie">View files in Gennie</a>
+        </div>
 
-    <div class="folder" id="Dad">
-        <label for="file4">Dad</label>
-        <input type="file" id="file4" multiple>
-        <button onclick="uploadFiles('Dad', 'file4')">Upload to Dad</button>
-        <a href="/Dad">View files in Dad</a>
+        <div class="folder" id="Dad">
+            <label for="file4">Dad</label>
+            <input type="file" id="file4" multiple>
+            <button onclick="uploadFiles('Dad', 'file4')">Upload to Dad</button>
+            <a href="/Dad">View files in Dad</a>
+        </div>
     </div>
 
     <script>
